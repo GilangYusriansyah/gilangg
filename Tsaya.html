@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Kami - Casual Shoes</title>
+  <style>
+    :root {
+      --primary: #e62222;
+      --secondary: #f7dcbb;
+      --text-dark: #2c3e50;
+      --bg: #f9f9f9;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-dark);
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    marquee {
+      background-color: #d30000;
+      font-weight: bold;
+      padding: 10px 0;
+    }
+
+    nav {
+      background-color: var(--secondary);
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: bold;
+      margin: 0 15px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .sidebar {
+      flex: 1 1 200px;
+    }
+
+    .sidebar img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .content {
+      flex: 2 1 500px;
+    }
+
+    .content h2 {
+      color: var(--primary);
+      margin-top: 0;
+    }
+
+    .content img {
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      margin: 10px 0;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Tentang Perusahaan</h1>
+    <marquee>Kepuasan Anda Prioritas Kami</marquee>
+  </header>
+
+  <nav>
+    <a href="Hproduk.html">Produk</a> |
+    <a href="Transaksii.html">Transaksi</a> |
+    <a href="Tsaya.html">Tentang Kami</a>
+  </nav>
+
+  <div class="container">
+    <!-- Sidebar Kiri -->
+    <div class="sidebar">
+      <img src="sidebar left.jpg" alt="Gambar Kiri">
+    </div>
+
+    <!-- Konten Utama -->
+    <div class="content">
+      <h2>Profil</h2>
+      <p id="intro">Kami menjual berbagai sepatu casual sesuai keinginan Anda yang pasti murah dan berkualitas, hanya ada di Casual Shoes.</p>
+
+      <h2>Kontak Kami</h2>
+      <p>Nama: <strong>Gilang Yusriansyah</strong></p>
+      <img src="Foto Profile.jpg" width="150" alt="Foto Gilang">
+      <p>Email: <a href="mailto:gilangyusriansyah@gmail.com">gilangyusriansyah@gmail.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/gilangyusrii_" target="_blank">@gilangyusrii_</a></p>
+    </div>
+
+    <!-- Sidebar Kanan -->
+    <div class="sidebar">
+      <img src="sidebar right.jpg" alt="Gambar Kanan">
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Casual Shoes - This Is Casual Shoes
+  </footer>
+
+  <script>
+    // Efek animasi sambutan setelah 1 detik
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const intro = document.getElementById('intro');
+        intro.style.transition = 'transform 0.5s ease';
+        intro.style.transform = 'scale(1.02)';
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>

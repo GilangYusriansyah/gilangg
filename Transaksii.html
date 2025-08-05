@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Form Transaksi - Casual Shoes</title>
+  <style>
+    :root {
+      --primary: #e62222;
+      --secondary: #f7dcbb;
+      --bg: #f9f9f9;
+      --text-dark: #2c3e50;
+      --white: #ffffff;
+      --gray: #ccc;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-dark);
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--primary);
+      margin-top: 20px;
+    }
+
+    marquee {
+      background-color: var(--primary);
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    .nav {
+      text-align: center;
+      margin: 15px 0;
+    }
+
+    .nav a {
+      margin: 0 15px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 600px;
+      background: var(--white);
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .container h2 {
+      color: var(--primary);
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid var(--gray);
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    input[type="submit"] {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #c0392b;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Form Transaksi Pembelian</h1>
+  <marquee>Isi data lengkap untuk melanjutkan pembelian. Transaksi aman & terpercaya!</marquee>
+
+  <div class="nav">
+    <a href="Hproduk.html">Produk</a> |
+    <a href="Transaksii.html">Transaksi</a> |
+    <a href="Tsaya.html">Tentang & Kontak</a>
+  </div>
+
+  <div class="container">
+    <h2>Isi Formulir Transaksi</h2>
+    <form id="formTransaksi">
+      <label>Nama:</label>
+      <input type="text" name="nama" placeholder="Masukkan nama lengkap" required />
+
+      <label>Email:</label>
+      <input type="email" name="email" placeholder="Masukkan email" required />
+
+      <label>Alamat:</label>
+      <textarea name="alamat" rows="4" placeholder="Masukkan alamat lengkap" required></textarea>
+
+      <label>Pilih Produk:</label>
+      <select name="produk" required>
+        <option value="">-- Pilih Produk --</option>
+        <option value="Adidas Handball Spezial - Rp 1.700.000">Adidas Handball Spezial - Rp 1.700.000</option>
+        <option value="Puma Suede - Rp 1.450.000">Puma Suede - Rp 1.450.000</option>
+        <option value="Nike Air Force - Rp 1.550.000">Nike Air Force - Rp 1.550.000</option>
+      </select>
+
+      <label>Jumlah:</label>
+      <input type="number" name="jumlah" min="1" placeholder="Jumlah pembelian" required />
+
+      <label>Metode Pembayaran:</label>
+      <select name="metode" required>
+        <option value="">-- Pilih Metode Pembayaran --</option>
+        <option value="Transfer Bank">Transfer Bank</option>
+        <option value="E-Wallet (DANA, OVO, ShopeePay)">E-Wallet (DANA, OVO, ShopeePay)</option>
+        <option value="COD (Bayar di Tempat)">COD (Bayar di Tempat)</option>
+      </select>
+
+      <input type="submit" value="Kirim Pesanan" />
+    </form>
+  </div>
+
+  <footer>
+    &copy; 2025 Casual Shoes Store - Transaksi Aman, Barang Bergaransi
+  </footer>
+
+  <script>
+    const form = document.getElementById("formTransaksi");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nama = form.nama.value.trim();
+      const email = form.email.value.trim();
+      const alamat = form.alamat.value.trim();
+      const produk = form.produk.value;
+      const jumlah = parseInt(form.jumlah.value);
+      const metode = form.metode.value;
+
+      if (!nama || !email || !alamat || !produk || jumlah <= 0 || !metode) {
+        alert("Harap isi semua data dengan benar.");
+        return;
+      }
+
+      alert(
+        `✅ Terima kasih, ${nama}!\n\n` +
+        `📦 Produk: ${produk}\n` +
+        `🔢 Jumlah: ${jumlah} pcs\n` +
+        `💳 Pembayaran: ${metode}\n` +
+        `📍 Alamat: ${alamat}\n\n` +
+        `📧 Konfirmasi akan dikirim ke: ${email}`
+      );
+
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
